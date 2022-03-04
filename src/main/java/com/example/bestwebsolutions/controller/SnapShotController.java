@@ -20,7 +20,7 @@ public class SnapShotController {
     public ModelAndView getObjectsByNameOrType(@PathVariable("item") String item) {
         List<Photo> photos = service.getAll(item.isEmpty() ? "mountain" : item);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("showPhotos");
+        modelAndView.setViewName("index");
         modelAndView.addObject("photos", photos);
         modelAndView.addObject("type", item);
         return modelAndView;
